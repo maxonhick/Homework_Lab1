@@ -48,8 +48,17 @@ boost_1_87_0.tar.gz  100% [=====================================================
 ```
 7. Выведите в консоль все файлы, где упоминается последовательность `boost::asio`.  
 Команда: ```grep -rnw ~/boost_1_87_0 -e 'boost::asio' >> asio.txt```  
-Вывод команды происходит сразу в файл asio.txt, который так же есть в этом репозитоии.
-8. Скомпилирутйе *boost*. Можно воспользоваться [инструкцией](https://www.boost.org/doc/libs/1_61_0/more/getting_started/unix-variants.html#or-build-custom-binaries) или [ссылкой](https://codeyarns.com/2017/01/24/how-to-build-boost-on-linux/).
+Вывод команды происходит сразу в файл asio.txt, который так же есть [в этом репозитоии](https://github.com/maxonhick/Homework_Lab1/blob/main/asio.txt).
+8. Скомпилирутйе *boost*. Можно воспользоваться [инструкцией](https://www.boost.org/doc/libs/1_61_0/more/getting_started/unix-variants.html#or-build-custom-binaries) или [ссылкой](https://codeyarns.com/2017/01/24/how-to-build-boost-on-linux/).  
+Компилировать будем с помощью инструкции. Команды:  
+```sh
+cd ~/boost_1_87_0/
+
+./bootstrap.sh
+
+./b2 --prefix=~/Desktop/Boost install >> ~/maxonhick/workspace/reports/lab01/build.txt
+```
+Вывод также есть в файле из этого репозитория.
 9. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию `~/boost-libs`.
 10. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
 11. Найдите *топ10* самых "тяжёлых".
